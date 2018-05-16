@@ -1,2 +1,2 @@
-# oneclickhdp_lti
-oneclick deployment for hdp tested lti backup
+# lnt_mosaic_code
+mosaic_dev_code

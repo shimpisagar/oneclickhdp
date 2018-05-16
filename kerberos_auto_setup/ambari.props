@@ -1,0 +1,23 @@
+# Specify clustername on which you need to enable kerberos
+CLUSTER_NAME=hdptest
+# Ambari login credentials [username and password]
+AMBARI_ADMIN_USER=admin
+AMBARI_ADMIN_PASSWORD=admin
+# Hostname where ambari server is running
+AMBARI_HOST=ip-10-0-1-66.ec2.internal
+# Specify Java home path - This path will be also consider for installating jce policies
+JAVA_HOME=/usr/java/jdk1.8.0_151
+# Hostname of node where you want to install KDC server
+KDC_HOST=ip-10-0-1-66.ec2.internal
+# REALM for KDC node
+REALM=LTI.COM
+# Specify space seperated list of kerberos client in round braces
+KERBEROS_CLIENTS=(ip-10-0-1-66.ec2.internal)
+# Username for ssh to remote nodes
+SSH_USER=ec2-user
+# Specify password or key for above "SSH_USER". Make sure you keep only one entry below and remove unwanted entry.
+SSH_SERVER_PASSWORD=
+SSH_SERVER_PRIVATE_KEY=/tmp/oneclick_key.pem
+
+##### Notes #####
+#1. Admin princial is admin/admin and password is hadoop

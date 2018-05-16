@@ -1,0 +1,11 @@
+# Specify clustername on which you need to enable kerberos
+OPENLDAP_SERVER_HOSTNAME=ip-10-0-1-141.ec2.internal
+# Slappassword for openldap server
+OPENLDAP_SERVER_SLAPPASSWD=redhat
+#List of Openldap Clients seperated with spaces in round braces
+OPENLDAP_CLIENTS=(ip-10-0-1-141.ec2.internal)
+# Username for ssh to remote nodes
+SSH_USER=ec2-user
+# Specify password or key for above "SSH_USER". Make sure you keep only one entry below and remove unwanted entry.
+SSH_SERVER_PASSWORD=
+SSH_SERVER_PRIVATE_KEY=/tmp/oneclick_key.pem
