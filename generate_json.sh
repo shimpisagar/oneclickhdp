@@ -414,6 +414,25 @@ curl -H "X-Requested-By: ambari" -X POST -u admin:admin http://$AMBARI_HOST:8080
 
 }
 
+######### Register VDF ##########
+register_vdf()
+{
+curl -H "X-Requested-By:ambari" -X POST -u admin:admin http://$AMBARI_HOST:8080/api/v1/version_definitions -d '{ "VersionDefinition": { "version_url": "http://'"$REPO_SERVER"'/hdp/'"$OS_VERSION"'/HDP-'"$CLUSTER_VERSION"'/HDP-'"$CLUSTER_VERSION"'.xml" } }'
+}
+
+#################
+# Main function #
+################
+
+#Register VDF
+
+if [[ "${AMBARIVERSION:0:3}" > "2.6" ]] || [[ "${AMBARIVERSION:0:3}" == "2.6" ]]
+  then
+  # Required to register VDF for the specific build version
+  register_vdf
+fi
+
+
 #################
 # Main function #
 ################
