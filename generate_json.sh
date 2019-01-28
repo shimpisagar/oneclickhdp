@@ -29,7 +29,12 @@ hostmap()
 #Start of function
 
 echo "{
-  \"blueprint\" : \"$CLUSTERNAME\",
+  \"blueprint\" : \"$CLUSTERNAME\","
+  
+if [ "${AMBARIVERSION:0:3}" > "2.6" ]] || [[ "${AMBARIVERSION:0:3}" == "2.6" ]]
+	then
+		echo "\"repository_version_id\" : \"1\","
+fi
   \"default_password\" : \"$DEFAULT_PASSWORD\",
   \"host_groups\" :["
 
